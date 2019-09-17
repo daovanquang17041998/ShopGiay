@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix'=>'admin'],function(){
+    Route::group(['prefix'=>'danh-muc'],function(){
+        Router::get("them",['as'=>'themdanhmuc','user'=>'CategoryController@getAddCate']);
+    });
+});
