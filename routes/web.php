@@ -16,6 +16,17 @@ Route::get('/', function () {
 });
 Route::group(['prefix'=>'admin'],function(){
     Route::group(['prefix'=>'danh-muc'],function(){
-        Route::get("them",['as'=>'themdanhmuc','uses'=>'CategoryController@getAddCate']);
+        Route::get("them",[
+            'as'=>'themdanhmuc',
+            'uses'=>'CategoryController@getAddCategory'
+        ]);
+        Route::get("them",[
+            'as'=>'themdanhmuc',
+            'uses'=>'CategoryController@postAddCategory'
+        ]);
+        Route::get("danh-sach",[
+            'as'=>'listdanhmuc',
+            'uses'=>'CategoryController@getListCategory'
+        ]);
     });
 });
